@@ -1,1 +1,2 @@
- Запуск проекта производить из класса Runner (src/test/java/Variant1/Runner.java)
+1. Запуск проекта производить из класса Runner (src/test/java/Variant1/Runner.java)
+2. Формат изображений - .dot. Для конвертации использовалась консольная утилита - graphviz
