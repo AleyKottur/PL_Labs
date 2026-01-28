@@ -1,0 +1,105 @@
+digraph G {
+    rankdir=TB;
+    fontname="Courier";
+    graph [fontname="Courier"];
+    node [fontname="Courier", fontsize=10, height=0.3, shape=box, style="rounded, filled"];
+    edge [fontname="Courier", arrowsize=0.7];
+
+    subgraph cluster_func_0 { 
+        label = "CFG: main";
+        style = "rounded, filled";
+        color = darkgrey;
+        bgcolor = "#fafafa";
+
+        subgraph cluster_n0 { 
+            label = "BB0";
+            style = "rounded";
+            n0s0 [label="START: main", shape=box, fillcolor=white];
+            n0s1 [label="int a = 0", shape=box, fillcolor=white];
+            n0s0 -> n0s1 [style=dotted];
+            n0s2 [label="int b = 0", shape=box, fillcolor=white];
+            n0s1 -> n0s2 [style=dotted];
+            n0s3 [label="int res = 0", shape=box, fillcolor=white];
+            n0s2 -> n0s3 [style=dotted];
+            n0s4 [label="int nothing = 0", shape=box, fillcolor=white];
+            n0s3 -> n0s4 [style=dotted];
+            n0s5 [label="char c", shape=box, fillcolor=white];
+            n0s4 -> n0s5 [style=dotted];
+            n0s6 [label="scan(a)", shape=box, fillcolor=white];
+            n0s5 -> n0s6 [style=dotted];
+            n0s7 [label="scan(c)", shape=box, fillcolor=white];
+            n0s6 -> n0s7 [style=dotted];
+            n0s8 [label="scan(b)", shape=box, fillcolor=white];
+            n0s7 -> n0s8 [style=dotted];
+            n0s9 [label="scan(nothing)", shape=box, fillcolor=white];
+            n0s8 -> n0s9 [style=dotted];
+        }
+        subgraph cluster_n1 { 
+            label = "BB1";
+            style = "rounded";
+            n1s0 [label="IF (c == '+')", shape=diamond, fillcolor=grey];
+        }
+        subgraph cluster_n2 { 
+            label = "BB2";
+            style = "rounded";
+            n2s0 [label="res = a+b", shape=box, fillcolor=white];
+        }
+        subgraph cluster_n3 { 
+            label = "BB3";
+            style = "rounded";
+            n3s0 [label="IF (c == '-')", shape=diamond, fillcolor=grey];
+        }
+        subgraph cluster_n4 { 
+            label = "BB4";
+            style = "rounded";
+            n4s0 [label="res = a-b", shape=box, fillcolor=white];
+        }
+        subgraph cluster_n5 { 
+            label = "BB5";
+            style = "rounded";
+            n5s0 [label="IF (c == '/')", shape=diamond, fillcolor=grey];
+        }
+        subgraph cluster_n6 { 
+            label = "BB6";
+            style = "rounded";
+            n6s0 [label="res = a/b", shape=box, fillcolor=white];
+        }
+        subgraph cluster_n7 { 
+            label = "BB7";
+            style = "rounded";
+            n7s0 [label="IF (c == '*')", shape=diamond, fillcolor=grey];
+        }
+        subgraph cluster_n8 { 
+            label = "BB8";
+            style = "rounded";
+            n8s0 [label="res = a*b", shape=box, fillcolor=white];
+        }
+        subgraph cluster_n9 { 
+            label = "BB9";
+            style = "rounded";
+            n9s0 [label="print(res)", shape=box, fillcolor=white];
+            n9s1 [label="print(nothing)", shape=box, fillcolor=white];
+            n9s0 -> n9s1 [style=dotted];
+        }
+        subgraph cluster_n10 { 
+            label = "BB10";
+            style = "rounded";
+            n10s0 [label="END: main", shape=oval, fillcolor=lightgrey];
+        }
+    n0s9 -> n1s0;
+    n1s0 -> n2s0 [label="True", style=bold];
+    n1s0 -> n3s0 [label="False", style=dashed];
+    n2s0 -> n3s0;
+    n3s0 -> n4s0 [label="True", style=bold];
+    n3s0 -> n5s0 [label="False", style=dashed];
+    n4s0 -> n5s0;
+    n5s0 -> n6s0 [label="True", style=bold];
+    n5s0 -> n7s0 [label="False", style=dashed];
+    n6s0 -> n7s0;
+    n7s0 -> n8s0 [label="True", style=bold];
+    n7s0 -> n9s0 [label="False", style=dashed];
+    n8s0 -> n9s0;
+    n9s1 -> n10s0;
+    }
+
+}

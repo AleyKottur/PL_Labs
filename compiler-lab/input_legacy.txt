@@ -1,0 +1,30 @@
+void main()
+{
+    int a = 10;
+    int c = 15;
+    if (a > 5)
+    {
+    	a = a - 1;
+    }
+    else
+    {
+	a = a + 1;
+    }
+
+    while ( a > 1 )
+    {
+	while ( c > 5 )
+        {
+	    a = a - 1;
+            c = c - 1;
+        }
+	if ( c < 6)
+	{
+		break;	
+	}
+    }
+	print(a);
+    uint abra = 10 / 2;
+    abra = a + abra;
+	print(abra);
+}

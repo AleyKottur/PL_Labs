@@ -1,0 +1,30 @@
+void main()
+{
+	int a = 0;
+	int b = 0;
+	int res = 0;
+	int nothing = 0;
+	char c;
+	scan(a);
+	scan(c);
+	scan(b);
+	scan(nothing);
+	if ( c == '+')
+	{
+		res = a + b;
+	}
+	if ( c == '-')
+	{
+		res = a - b;
+	}
+	if ( c == '/')
+	{
+		res = a / b;
+	}
+	if ( c == '*')
+	{
+		res = a * b;
+	}
+	print(res);
+	print(nothing);
+}
